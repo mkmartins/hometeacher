@@ -1,4 +1,5 @@
 ActiveAdmin.register HomeTeacher do
+  permit_params :email, :phone_number, :name
 
 
   # See permitted parameters documentation:
