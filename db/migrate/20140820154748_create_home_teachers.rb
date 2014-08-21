@@ -4,7 +4,6 @@ class CreateHomeTeachers < ActiveRecord::Migration
       t.string :email
       t.string :phone_number
       t.string :name
-      t.references :member, index: true
 
       t.timestamps
     end

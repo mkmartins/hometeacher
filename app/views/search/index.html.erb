@@ -1,0 +1,23 @@
+<header>
+    <div class="container">
+        <div class="intro-text">
+					<% if @results.blank? %>
+					  <h1>I am sorry, we couldn't find your name ):</h1>
+					  <li><i>Remember to type your first AND last name.</i></li>
+					  <li><i>If we still can't find your name, contact Brother Smith at (123)456-7890. I am sorry about that!</i></li>
+					  <h1>Try Again:</h1>
+							<%= form_tag search_path, method: :get do %>
+							  <%= text_field_tag 'keyword', nil, placeholder: 'Ex.: Joseph Smith' %>
+							<% end %>
+					<% else %> 
+					  <h1>Are you one of the people listed below ?</h1>
+					  <% @results.each do |result| %>
+					    <li>
+					      <%= link_to result.try(:name), '/' %>
+					    </li>
+					  <% end %>
+					<% end %>
+        </div>
+        <h2><%= link_to 'Go Home', root_path %></h2>
+    </div>
+</header>

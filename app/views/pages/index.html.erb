@@ -1,2 +1,12 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<header>
+    <div class="container">
+        <div class="intro-text">
+            <div class="intro-lead-in">Hello, Midvale 2nd ward!</div>
+            <div class="intro-heading">Find Out Who Your Home Teachers Are:</div>
+            <%= form_tag search_path, method: :get do %>
+              <h5>Just type your first and last name:</h5>
+    		  <%= text_field_tag 'keyword', nil, placeholder: 'Ex.: Joseph Smith' %>
+    		<% end %>
+        </div>
+    </div>
+</header>

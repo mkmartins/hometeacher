@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140820154748) do
+ActiveRecord::Schema.define(version: 20140820202902) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -50,12 +50,16 @@ ActiveRecord::Schema.define(version: 20140820154748) do
     t.string   "email"
     t.string   "phone_number"
     t.string   "name"
-    t.integer  "member_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "home_teachers", ["member_id"], name: "index_home_teachers_on_member_id"
+  create_table "home_teachings", force: true do |t|
+    t.integer  "member_id"
+    t.integer  "home_teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "members", force: true do |t|
     t.string   "name"
