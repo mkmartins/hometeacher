@@ -12,6 +12,7 @@
 			<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 				<h1><%= @member.name %><h1>
 				<br>
+				<%if @home_teachers.any? %>
 				<h2>Your Home Teachers Are: </h3>
 		    	 <div class="well profile">
 	            <div class="col-sm-12">
@@ -23,9 +24,11 @@
 		                <% end %>
 	                </div> 
 	            </div>            
-	    	   </div>	 
+	    	   </div>
+	    	<% else %>
+	    	<h2> I am sorry, but you are not important enough to have a home teacher.</h2>
+	    	<% end %>	 
 	      <h2><%= link_to 'Go Home', root_path %></h2>
-	      <%= link_to 'show', member_path %>
 	  </div>
   </div>
 </header>
